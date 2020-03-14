@@ -1,0 +1,97 @@
+\documentclass{mcv}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Minimal choice of colors with gun as font color
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\definecolor{peacock}{HTML}{3E71B9}
+\definecolor{gun}{HTML}{3B3B3B}
+\color{gun} % Font color set as default
+\definecolor{mouse}{HTML}{BDBEB9}
+
+\begin{document}
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Left column
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\bernieside{
+% Candidate
+\candidate{Kevin}{Fakon} % Name -- Last name
+\vspace{-7pt}
+% Birthday
+\birthday{2020}{03}{13} % Year | Month | Day
+\vspace{-3pt}
+% Three qualities and a picture
+% The picture should be 800x1200, but if you have other formats you can always tweak
+% the .cls file in the section Picture and quick skills
+\splashinfo{Tasty}{Flamboyant}{Nonexistent}{images/profile.jpg}
+%\vspace{-5pt}
+% Languages
+%\begin{center}\textbf{Languages}
+%\end{center}\vspace{-15pt}
+% Set second attribute is an integer between 1 and 100
+\lang{English}{100}
+\vspace{-3pt}
+\lang{French}{58}
+
+% Contact info
+\vspace{-8pt}
+\reachmetitle{How to reach me}
+\vspace{-3pt}
+\customfield{Address}{Baker Street, London -- UK}
+\customfield{E-mail}{kfakon@kfakon.kf}
+\customfield{Mobile}{+007}
+
+% Typical activities
+\vspace{-8pt}
+\usuallydo{What I usually do}
+% Skills should be expressed as integers between 0 and 100,
+% (summing up to 100 and preferably sorted) slash legend
+% You should describe no more than 5 activities
+% You can ignore skills setting their percentage to 0
+%\skillpie{35/Ananas alla \textit{menta} con contorno di erbette.}{30/\textbf{Banana} glassato con nappatura di cedrata Tassoni.}{20/Cacomela nipponico in \textit{sushimi di stacippa}.}{10/Dattero biologico anticrittogamico.}{5/Eddo, l'unico frutto che inizia con E secondo Google.}
+
+\skillpie{35/Licensing and killing}{25/Drinking a couple of Dry Martinis}{19/Baking in Baker Street}{16/Scone tasting}{5/Blind dating}
+
+
+} % End of left column
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Don't write anything in here
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\vdashline
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Right column
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\joeside{
+
+% 
+\sectiontitle{Work experience}
+% Section item
+% 1) Time period (i.e., year -- year, or just year)
+% 2) Job title (or education title)
+% 3) Company or school
+% 4) Location
+% 5) Description
+
+\sectionitem{Year -- Year}{Job title}{Which Inc.}{Where -- Planet Earth}{Anything that might sound good on a resume}
+
+\sectiontitle{Education}
+\sectionitem{Year -- Year}{Master of None in Snackology}{Life University}{Near Here -- Moon}{Thesis title: ``How to change the recipe of a beloved and popular snack without letting the customers know''.\\Grade: 20/20}
+
+\sectiontitle{Training}
+
+\sectionitemlight{Year -- Year}{Funk Dancing}{Space Cowboy Community Center}{Another galaxy}
+
+\sectiontitle{Other activities and skills}
+\otherskill{I manage to stay alive, most of the time}
+
+\sectiontitle{Personal interests}
+\otherskill{Mind your own business}
+
+
+} % End of right column
+\vspace*{\fill}
+% A message for those who consider privacy issues
+\gdpr{I hereby authorize the owner of a popular social network to continue reading my e-mails}
+
+\end{document}
