@@ -35,6 +35,8 @@
 \usepackage{xstring}
 \usepackage{textpos}
 
+\usepackage[ddmmyyyy]{datetime}
+
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Definitions and global properties
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -56,7 +58,14 @@
 
 \newcommand{\bernieside}[1]{\begin{wrapfigure}{L}{60mm}
 #1
-\end{wrapfigure}}
+\end{wrapfigure}
+}
+
+\newcommand{\berniedash}{
+\begin{tikzpicture}[white]
+\draw[gun, dashed, line width=0.2mm](0,0)--(6,0);
+\end{tikzpicture}\vspace{10pt}
+}
 
 \newenvironment{tabs}[1]
  {\flushleft\TabPositions{#1}}
@@ -66,7 +75,8 @@
 %A side \tab B side
 %\end{tabs}
 
-\newcommand{\joeside}[1]{\vspace{-4.3mm}#1}
+\newcommand{\joeside}[1]{\vspace{-4.3mm}#1
+\vspace*{\fill}}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Candidate's name
@@ -76,9 +86,17 @@
 \end{center}}
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-% Birthday
+% Birthday & Date
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 \newcommand{\birthday}[3]{Date of birth\hfill#1 \textbar{} #2 \textbar{} #3\\[5pt]}
+
+\def\mydate{\leavevmode\hbox{\the\year { }\textbar{} \twodigits\month { }\textbar{} \twodigits\day}}
+\def\twodigits#1{\ifnum#1<10 0\fi\the#1}
+
+\newcommand{\wherewhen}[1]{
+#1\hfill \mydate}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 \newcommand*{\IsInteger}[3]{%
     \IfStrEq{#1}{ }{%
@@ -594,6 +612,25 @@ grow to right by=2.48cm ]
 \end{tikzpicture}
 \vspace{7pt}
 }
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Cover letter
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+\newcommand{\cletter}[1]{
+\begin{tcolorbox}[
+	enhanced,
+	frame hidden,
+	opacityframe=0,
+	colback=white,
+	left=-2.4cm,
+	arc=0mm,
+	width=10.7cm,
+	boxsep=-1.4mm,
+	grow to left by=-2.4cm ]
+	\textcolor{gun}{#1}
+\end{tcolorbox}}
+
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % In case you were wondering, you're awesome!
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
