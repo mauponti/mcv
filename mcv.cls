@@ -25,6 +25,8 @@
 \usepackage{graphicx}
 \usepackage{lipsum} % To fill the void
 
+\usepackage[urlcolor=peacock,colorlinks=true]{hyperref}
+
 \usepackage[a4paper, left=93mm, right=12mm,	top=12mm, bottom=12mm]{geometry}
 \usepackage{cmbright}
 \usepackage[T1]{fontenc}
