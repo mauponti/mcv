@@ -14,8 +14,9 @@
 \LoadClass[11pt]{article}
 \RequirePackage{xcolor}
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+
 \usepackage{xstring}
+\usepackage{xifthen}
 
 \usepackage{float}
 \usepackage{wrapfig}
@@ -24,8 +25,6 @@
 \usepackage{pgf-pie}
 \usepackage{graphicx}
 \usepackage{lipsum} % To fill the void
-
-\usepackage[urlcolor=peacock,colorlinks=true]{hyperref}
 
 \usepackage[a4paper, left=93mm, right=12mm,	top=12mm, bottom=12mm]{geometry}
 \usepackage{cmbright}
@@ -36,6 +35,8 @@
 
 \usepackage{xstring}
 \usepackage{textpos}
+
+\usepackage[urlcolor=peacock,colorlinks=true]{hyperref}
 
 \usepackage[ddmmyyyy]{datetime}
 
@@ -90,7 +91,18 @@
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Birthday & Date
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-\newcommand{\birthday}[3]{Date of birth\hfill#1 \textbar{} #2 \textbar{} #3\\[5pt]}
+\newcommand{\ifequals}[3]{\ifthenelse{\equal{#1}{#2}}{#3}{}}
+\newcommand{\case}[2]{#1 #2} % Dummy, so \renewcommand has something to overwrite...
+\newenvironment{switch}[1]{\renewcommand{\case}{\ifequals{#1}}}{}
+
+\newcommand{\birthday}[4]{ % Languages switch [it - en - fr]
+	\begin{switch}{#1}
+      		\case{it}{Data di nascita\hfill#2 \textbar{} #3 \textbar{} #4\\[5pt]}
+       	\case{en}{Date of birth\hfill#2 \textbar{} #3 \textbar{} #4\\[5pt]}
+       	\case{fr}{
+Date de naissance \hfill#2 \textbar{} #3 \textbar{} #4\\[5pt]}
+	\end{switch}
+}
 
 \def\mydate{\leavevmode\hbox{\the\year { }\textbar{} \twodigits\month { }\textbar{} \twodigits\day}}
 \def\twodigits#1{\ifnum#1<10 0\fi\the#1}
@@ -155,7 +167,7 @@ opacityfill=0,
 arc=3mm,
 boxrule=0.5mm,
 frame hidden,
-frame style = {fill plain image*={scale=0.12}{#4}},  % Background image
+frame style = {fill plain image*={scale=1.37}{#4}},  % Background image
 borderline={0.2mm}{0mm}{gun,dashed},
 height=4.5cm,
 width=3.5cm,
@@ -590,6 +602,33 @@ grow to right by=2.48cm ]
 	boxsep=-1.4mm,
 	grow to left by=-2.4cm ]
 	\textcolor{gun}{#2, #3, #4.}
+\end{tcolorbox}
+}
+
+\newcommand{\sectionitemsuperlight}[3]{\vspace{-2pt}
+\begin{tcolorbox}[
+	enhanced,
+	frame hidden,
+	opacityframe=0,
+	colback=white,
+	left=2mm,
+	arc=0mm,
+	width=4cm,
+	boxsep=-1.4mm ]
+	\textcolor{gun}{#1}
+\end{tcolorbox}
+\vspace{-21pt}
+\begin{tcolorbox}[
+	enhanced,
+	frame hidden,
+	opacityframe=0,
+	colback=white,
+	left=4.5mm,
+	arc=0mm,
+	width=10.7cm,
+	boxsep=-1.4mm,
+	grow to left by=-2.4cm ]
+	\textcolor{gun}{#2, #3.}
 \end{tcolorbox}
 }
 
