@@ -167,7 +167,7 @@ opacityfill=0,
 arc=3mm,
 boxrule=0.5mm,
 frame hidden,
-frame style = {fill plain image*={scale=1.37}{#4}},  % Background image
+frame style = {fill plain image*={scale=0.13}{#4}},  % Background image
 borderline={0.2mm}{0mm}{gun,dashed},
 height=4.5cm,
 width=3.5cm,
@@ -175,6 +175,25 @@ grow to left by=-2.65cm,
 grow to right by=2.48cm ]
 \end{tcolorbox}\vspace{-3pt}
 }
+
+\newcommand{\splashinfolite}[1]{
+\vspace{-21pt}
+\begin{center}
+\begin{tcolorbox}[
+enhanced,
+opacityfill=0,
+arc=3mm,
+boxrule=0.5mm,
+frame hidden,
+frame style = {fill plain image*={scale=0.13}{#1}},  % Background image
+borderline={0.2mm}{0mm}{gun,dashed},
+height=4.5cm,
+width=3.5cm ]
+\end{tcolorbox}
+\end{center}
+\vspace{-8pt}
+}
+
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Languages display
