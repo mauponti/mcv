@@ -650,7 +650,7 @@ width=3.5cm ]
 	\textcolor{gun}{#2, #3.}
 \end{tcolorbox}
 }
-
+% One liner skill description
 \newcommand{\otherskill}[1]{\vspace{-2pt}
 \begin{tcolorbox}[
 	enhanced,
@@ -671,6 +671,41 @@ width=3.5cm ]
 	\filldraw [white,fill=white] (-2.3,0) circle (1pt); % Just to shift things right
 \end{tikzpicture}
 \vspace{7pt}
+}
+
+% Skills with a description
+\newcommand{\otherskillverbose}[2]{\vspace{-2pt}
+\begin{tcolorbox}[
+	enhanced,
+	frame hidden,
+	opacityframe=0,
+	colback=white,
+	left=4.5mm,
+	arc=0mm,
+	width=10.7cm,
+	boxsep=-1.4mm,
+	grow to left by=-2.4cm ]
+	\textcolor{gun}{#1.}
+\end{tcolorbox}
+\vspace{-22pt}
+\begin{tikzpicture}[white]
+	\filldraw [peacock,fill=peacock] (0,0) circle (3pt);
+	\filldraw [white,fill=white] (0,0) circle (1.5pt);
+	\filldraw [white,fill=white] (-2.3,0) circle (1pt); % Just to shift things right
+\end{tikzpicture}
+\begin{tcolorbox}[
+	enhanced,
+	frame hidden,
+	opacityframe=0,
+	colback=white,
+	left=4.5mm,
+	arc=0mm,
+	width=10.7cm,
+	boxsep=-1.4mm,
+	grow to left by=-2.4cm ]
+	\textcolor{gun}{\textit{#2}.}
+\end{tcolorbox}
+\vspace{-1pt}
 }
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
