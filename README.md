@@ -38,6 +38,7 @@ An example of how the cover letter will look like.
 - ```\sectionitem{dates}{job title}{company name}{place}{description}```: it shows *dates* (e.g.: 2016 -- 2018) on the left and everything else aligned on a right column. An italic decoration is used for *description*, in which a user can use ```//``` to add new lines.
 - ```\sectionitemlight{dates}{first item}{second item}{third item}```: it is similar to the previous command, except it has no italic parts.
 - ```\otherskill{skill or activity}```: a bullet (peacock colored hollow dot) item.
+- ```\otherskillverbose{skill or activity}{additional info}```: a bullet (peacock colored hollow dot) item, with a subpart for additional italic info.
 - ```\cletter{text}```: a text wrapper to be used in cover letters, in which a user can use ```//``` to add new lines.
 
 ##### Additional commands
