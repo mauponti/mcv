@@ -167,7 +167,7 @@ opacityfill=0,
 arc=3mm,
 boxrule=0.5mm,
 frame hidden,
-frame style = {fill plain image*={scale=0.13}{#4}},  % Background image
+frame style = {fill plain image*={scale=1.37}{#4}},  % Background image
 borderline={0.2mm}{0mm}{gun,dashed},
 height=4.5cm,
 width=3.5cm,
@@ -177,7 +177,7 @@ grow to right by=2.48cm ]
 }
 
 \newcommand{\splashinfolite}[1]{
-\vspace{-21pt}
+%\vspace{-13pt}
 \begin{center}
 \begin{tcolorbox}[
 enhanced,
@@ -185,13 +185,15 @@ opacityfill=0,
 arc=3mm,
 boxrule=0.5mm,
 frame hidden,
-frame style = {fill plain image*={scale=0.13}{#1}},  % Background image
+frame style = {fill plain image*={scale=1.43}{#1}},  % Background image
 borderline={0.2mm}{0mm}{gun,dashed},
 height=4.5cm,
-width=3.5cm ]
+width=3.5cm]%,
+%grow to left by=-1.5cm] %,
+%grow to right by=0.5cm ]
 \end{tcolorbox}
 \end{center}
-\vspace{-8pt}
+%\vspace{-3pt}
 }
 
 
@@ -567,6 +569,33 @@ width=3.5cm ]
 	boxsep=-1.4mm,
 	grow to left by=-2.4cm ]
 	\textcolor{gun}{#2, #3, #4.\\[1pt]\textit{#5}.}
+\end{tcolorbox}
+}
+
+\newcommand{\sectionitemoneline}[4]{\vspace{-2pt}
+\begin{tcolorbox}[
+	enhanced,
+	frame hidden,
+	opacityframe=0,
+	colback=white,
+	left=2mm,
+	arc=0mm,
+	width=4cm,
+	boxsep=-1.4mm ]
+	\textcolor{gun}{#1}
+\end{tcolorbox}
+\vspace{-21pt}
+\begin{tcolorbox}[
+	enhanced,
+	frame hidden,
+	opacityframe=0,
+	colback=white,
+	left=4.5mm,
+	arc=0mm,
+	width=10.7cm,
+	boxsep=-1.4mm,
+	grow to left by=-2.4cm ]
+	\textcolor{gun}{#2, #3, #4.}
 \end{tcolorbox}
 }
 
